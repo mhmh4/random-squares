@@ -39,14 +39,12 @@ function drawGrid(ctx, grid, pixelSize) {
     x = 0;
     for (let j = 0; j < rows; j++) {
       ctx.fillStyle = grid[i][j];
-      ctx.rect(x, y, pixelSize, pixelSize);
+      ctx.fillRect(x, y, pixelSize, pixelSize);
+      ctx.strokeRect(x, y, pixelSize, pixelSize);
       x += pixelSize;
     }
     y += pixelSize;
   }
-
-  ctx.fill();
-  ctx.stroke();
 }
 
 drawGrid(ctx, grid, PIXEL_SIZE);
