@@ -25,8 +25,12 @@ for (let i = 0; i < m; i++) {
 }
 console.log(grid);
 
+ctx.fillStyle = "#fff";
+ctx.strokeStyle = "#333";
+
 for (let x = 0; x < canvas.clientWidth; x += PIXEL_SIZE) {
   for (let y = 0; y < canvas.clientHeight; y += PIXEL_SIZE) {
+    ctx.fillRect(x, y, x + PIXEL_SIZE, y + PIXEL_SIZE);
     ctx.strokeRect(x, y, x + PIXEL_SIZE, y + PIXEL_SIZE);
   }
 }
