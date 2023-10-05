@@ -25,12 +25,28 @@ for (let i = 0; i < m; i++) {
 }
 console.log(grid);
 
-ctx.fillStyle = "#fff";
-ctx.strokeStyle = "#333";
+function drawGrid(ctx, grid, pixelSize) {
+  const rows = grid.length;
+  const cols = grid[0].length;
 
-for (let x = 0; x < canvas.clientWidth; x += PIXEL_SIZE) {
-  for (let y = 0; y < canvas.clientHeight; y += PIXEL_SIZE) {
-    ctx.fillRect(x, y, x + PIXEL_SIZE, y + PIXEL_SIZE);
-    ctx.strokeRect(x, y, x + PIXEL_SIZE, y + PIXEL_SIZE);
+  let x = 0;
+  let y = 0;
+
+  ctx.beginPath();
+  ctx.strokeStyle = "#333";
+
+  for (let i = 0; i < cols; i++) {
+    x = 0;
+    for (let j = 0; j < rows; j++) {
+      ctx.fillStyle = grid[i][j];
+      ctx.rect(x, y, pixelSize, pixelSize);
+      x += pixelSize;
+    }
+    y += pixelSize;
   }
+
+  ctx.fill();
+  ctx.stroke();
 }
+
+drawGrid(ctx, grid, PIXEL_SIZE);
