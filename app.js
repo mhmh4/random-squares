@@ -48,3 +48,18 @@ function drawGrid(ctx, grid, pixelSize) {
 }
 
 drawGrid(ctx, grid, PIXEL_SIZE);
+
+function fill(grid, i1, j1, i2, j2, color) {
+  for (let x = i1; x <= i2; x++) {
+    for (let y = j1; y <= j2; y++) {
+      grid[x][y] = color;
+    }
+  }
+}
+
+fill(grid, 3, 3, 4, 4, "#ff0000");
+fill(grid, 10, 10, 10, 10, "#333");
+fill(grid, 0, 0, 2, 2, "lightblue");
+fill(grid, 0, 14, 10, 14, "darkgreen");
+
+drawGrid(ctx, grid, PIXEL_SIZE);
