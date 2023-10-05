@@ -57,9 +57,20 @@ function fill(grid, i1, j1, i2, j2, color) {
   }
 }
 
-fill(grid, 3, 3, 4, 4, "#ff0000");
-fill(grid, 10, 10, 10, 10, "#333");
-fill(grid, 0, 0, 2, 2, "lightblue");
-fill(grid, 0, 14, 10, 14, "darkgreen");
+function generateRandomColor() {
+  return (
+    "#" +
+    Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .toString()
+  );
+}
+
+console.log(generateRandomColor());
+
+fill(grid, 3, 3, 4, 4, generateRandomColor());
+fill(grid, 10, 10, 10, 10, generateRandomColor());
+fill(grid, 0, 0, 2, 2, generateRandomColor());
+fill(grid, 0, 14, 10, 14, generateRandomColor());
 
 drawGrid(ctx, grid, PIXEL_SIZE);
