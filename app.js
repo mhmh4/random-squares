@@ -1,1 +1,3 @@
-console.log("test");
+const canvas = document.getElementById("canvas");
+
+console.log(canvas);
