@@ -96,6 +96,7 @@ generateButton.addEventListener("click", () => {
 
 window.addEventListener("load", () => {
   updatePalette();
+  updatePreviews(inputs, previews);
   update();
 });
 
@@ -105,8 +106,18 @@ function updatePalette() {
   });
 }
 
+function updatePreviews(inputs, previews) {
+  for (let i = 0; i < inputs.length; i++) {
+    previews[i].style.backgroundColor = inputs[i].value;
+  }
+}
+
 const inputs = document.querySelectorAll(".palette-color");
+const previews = document.querySelectorAll(".color-preview");
 
 inputs.forEach((input) => {
-  input.addEventListener("input", updatePalette);
+  input.addEventListener("input", () => {
+    updatePalette();
+    updatePreviews(inputs, previews);
+  });
 });
