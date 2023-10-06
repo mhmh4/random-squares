@@ -32,15 +32,11 @@ function drawGrid(ctx, grid, pixelSize) {
   let x = 0;
   let y = 0;
 
-  ctx.beginPath();
-  ctx.strokeStyle = "#333";
-
   for (let j = 0; j < cols; j++) {
     x = 0;
     for (let i = 0; i < rows; i++) {
       ctx.fillStyle = grid[i][j];
       ctx.fillRect(x, y, pixelSize, pixelSize);
-      ctx.strokeRect(x, y, pixelSize, pixelSize);
       x += pixelSize;
     }
     y += pixelSize;
