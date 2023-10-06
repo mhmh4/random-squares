@@ -78,12 +78,14 @@ const palette = ["#125E8A", "#BB4430", "#7EBDC2", "#F3DFA2", "#7B6D8D"];
 
 const NUM_ITERATIONS = 10;
 
-for (let i = 0; i < NUM_ITERATIONS; i++) {
-  let x = getRandomIntInclusive(0, grid.length - 2);
-  let y = getRandomIntInclusive(0, grid[0].length - 2);
+const length = 1;
 
-  let x2 = x + 1;
-  let y2 = y + 1;
+for (let i = 0; i < NUM_ITERATIONS; i++) {
+  let x = getRandomIntInclusive(0, grid.length - 1 - length);
+  let y = getRandomIntInclusive(0, grid[0].length - 1 - length);
+
+  let x2 = x + length;
+  let y2 = y + length;
 
   console.log(x, y);
 
