@@ -68,16 +68,28 @@ const NUM_ITERATIONS = 3000;
 
 const lengths = [5, 4, 3, 2, 1];
 
-for (let i = 0; i < NUM_ITERATIONS; i++) {
-  const length = choice(lengths);
+function update() {
+  for (let i = 0; i < NUM_ITERATIONS; i++) {
+    const length = choice(lengths);
 
-  let x = getRandomIntInclusive(0, grid.length - 1 - length);
-  let y = getRandomIntInclusive(0, grid[0].length - 1 - length);
+    let x = getRandomIntInclusive(0, grid.length - 1 - length);
+    let y = getRandomIntInclusive(0, grid[0].length - 1 - length);
 
-  let x2 = x + length;
-  let y2 = y + length;
+    let x2 = x + length;
+    let y2 = y + length;
 
-  fill(grid, x, y, x2, y2, choice(palette));
+    fill(grid, x, y, x2, y2, choice(palette));
+  }
+
+  drawGrid(ctx, grid, PIXEL_SIZE);
 }
 
-drawGrid(ctx, grid, PIXEL_SIZE);
+const generateButton = document.getElementById("generate-button");
+
+generateButton.addEventListener("click", () => {
+  update();
+});
+
+window.addEventListener("load", () => {
+  update();
+});
