@@ -57,10 +57,6 @@ function fill(grid, i1, j1, i2, j2, color) {
   }
 }
 
-function generateRandomColor() {
-  return "#" + Math.floor(Math.random() * 16777215).toString(16);
-}
-
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
