@@ -17,6 +17,8 @@ canvas.height = CANVAS_HEIGHT * SCALE;
 const m = canvas.width / PIXEL_SIZE;
 const n = canvas.height / PIXEL_SIZE;
 
+let palette = [];
+
 const grid = [];
 
 for (let i = 0; i < m; i++) {
@@ -70,8 +72,6 @@ function choice(array) {
   return array[randomIndex];
 }
 
-const palette = ["#21295C", "#1B3B6F", "#065A82", "#1C7293", "#304C89"];
-
 const NUM_ITERATIONS = 20000;
 
 const lengths = [5, 4, 3, 2, 1];
@@ -99,5 +99,18 @@ generateButton.addEventListener("click", () => {
 });
 
 window.addEventListener("load", () => {
+  updatePalette();
   update();
+});
+
+function updatePalette() {
+  palette = Array.from(inputs).map((input) => {
+    return input.value;
+  });
+}
+
+const inputs = document.querySelectorAll(".palette-color");
+
+inputs.forEach((input) => {
+  input.addEventListener("input", updatePalette);
 });
