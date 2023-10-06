@@ -1,12 +1,12 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = 900;
-canvas.height = 300;
+canvas.width = 800;
+canvas.height = 400;
 
 console.log(canvas);
 
-const PIXEL_SIZE = 25;
+const PIXEL_SIZE = 20;
 
 const m = canvas.clientWidth / PIXEL_SIZE;
 const n = canvas.clientHeight / PIXEL_SIZE;
