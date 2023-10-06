@@ -4,27 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Document</title>
-  <style>
-    input.palette-color {
-      display: block;
-    }
-
-    #generate-button {
-      margin-bottom: 10px;
-    }
-  </style>
 </head>
 <body>
-  <div style="display: flex;">
-    <canvas id="canvas" style="border: 1px solid #eee; margin: 1em;"></canvas>
-    <div>
-      <button id="generate-button">Generate</button>
+  <div style="display: flex; margin: 1em">
+    <canvas id="canvas" style="border: 1px solid #eee;"></canvas>
+    <div style="padding-left: 1em;">
+      <button id="generate-button" style="margin-bottom: 10px;">Generate</button>
       <div>
-        <input type="text" class="palette-color" placeholder="Palette color 1" value="#21295C" autocomplete="off">
-        <input type="text" class="palette-color" placeholder="Palette color 2" value="#1B3B6F" autocomplete="off">
-        <input type="text" class="palette-color" placeholder="Palette color 3" value="#065A82" autocomplete="off">
-        <input type="text" class="palette-color" placeholder="Palette color 4" value="#1C7293" autocomplete="off">
-        <input type="text" class="palette-color" placeholder="Palette color 5" value="#304C89" autocomplete="off">
+        <input type="text" class="palette-color" placeholder="Palette color 1" value="#21295C" autocomplete="off" style="display: block;">
+        <input type="text" class="palette-color" placeholder="Palette color 2" value="#1B3B6F" autocomplete="off" style="display: block;">
+        <input type="text" class="palette-color" placeholder="Palette color 3" value="#065A82" autocomplete="off" style="display: block;">
+        <input type="text" class="palette-color" placeholder="Palette color 4" value="#1C7293" autocomplete="off" style="display: block;">
+        <input type="text" class="palette-color" placeholder="Palette color 5" value="#304C89" autocomplete="off" style="display: block;">
       </div>
     </div>
   </div>
