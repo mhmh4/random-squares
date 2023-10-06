@@ -62,7 +62,7 @@ function choice(array) {
   return array[randomIndex];
 }
 
-const palette = ["#125E8A", "#BB4430", "#7EBDC2", "#F3DFA2", "#7B6D8D"];
+const palette = ["#21295C", "#1B3B6F", "#065A82", "#1C7293", "#304C89"];
 
 const NUM_ITERATIONS = 3000;
 
