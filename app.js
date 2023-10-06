@@ -2,7 +2,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 canvas.width = 800;
-canvas.height = 400;
+canvas.height = 500;
 
 console.log(canvas);
 
@@ -72,7 +72,7 @@ function choice(array) {
 
 const palette = ["#125E8A", "#BB4430", "#7EBDC2", "#F3DFA2", "#7B6D8D"];
 
-const NUM_ITERATIONS = 1000;
+const NUM_ITERATIONS = 3000;
 
 const lengths = [5, 4, 3, 2, 1];
 
