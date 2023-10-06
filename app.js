@@ -69,6 +69,13 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function choice(array) {
+  const randomIndex = getRandomIntInclusive(0, array.length - 1);
+  return array[randomIndex];
+}
+
+const palette = ["#125E8A", "#BB4430", "#7EBDC2", "#F3DFA2", "#7B6D8D"];
+
 const NUM_ITERATIONS = 10;
 
 for (let i = 0; i < NUM_ITERATIONS; i++) {
@@ -80,7 +87,7 @@ for (let i = 0; i < NUM_ITERATIONS; i++) {
 
   console.log(x, y);
 
-  fill(grid, x, y, x2, y2, "#ff0000");
+  fill(grid, x, y, x2, y2, choice(palette));
 }
 
 drawGrid(ctx, grid, PIXEL_SIZE);
