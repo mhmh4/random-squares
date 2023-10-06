@@ -1,13 +1,21 @@
+const CANVAS_WIDTH = 800;
+const CANVAS_HEIGHT = 500;
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = 800;
-canvas.height = 500;
-
 const PIXEL_SIZE = 20;
 
-const m = canvas.clientWidth / PIXEL_SIZE;
-const n = canvas.clientHeight / PIXEL_SIZE;
+const SCALE = 2;
+
+canvas.style.width = CANVAS_WIDTH + "px";
+canvas.style.height = CANVAS_HEIGHT + "px";
+
+canvas.width = CANVAS_WIDTH * SCALE;
+canvas.height = CANVAS_HEIGHT * SCALE;
+
+const m = canvas.width / PIXEL_SIZE;
+const n = canvas.height / PIXEL_SIZE;
 
 const grid = [];
 
@@ -64,7 +72,7 @@ function choice(array) {
 
 const palette = ["#21295C", "#1B3B6F", "#065A82", "#1C7293", "#304C89"];
 
-const NUM_ITERATIONS = 3000;
+const NUM_ITERATIONS = 20000;
 
 const lengths = [5, 4, 3, 2, 1];
 
