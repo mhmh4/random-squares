@@ -58,12 +58,7 @@ function fill(grid, i1, j1, i2, j2, color) {
 }
 
 function generateRandomColor() {
-  return (
-    "#" +
-    Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .toString()
-  );
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
 }
 
 console.log(generateRandomColor());
