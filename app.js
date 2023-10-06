@@ -4,15 +4,10 @@ const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 500;
 
-console.log(canvas);
-
 const PIXEL_SIZE = 20;
 
 const m = canvas.clientWidth / PIXEL_SIZE;
 const n = canvas.clientHeight / PIXEL_SIZE;
-
-console.log(canvas.clientWidth, "->", m);
-console.log(canvas.clientHeight, "->", n);
 
 const grid = [];
 
@@ -23,7 +18,6 @@ for (let i = 0; i < m; i++) {
   }
   grid.push(row);
 }
-console.log(grid);
 
 function drawGrid(ctx, grid, pixelSize) {
   const rows = grid.length;
@@ -57,8 +51,6 @@ function generateRandomColor() {
   return "#" + Math.floor(Math.random() * 16777215).toString(16);
 }
 
-console.log(generateRandomColor());
-
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -84,8 +76,6 @@ for (let i = 0; i < NUM_ITERATIONS; i++) {
 
   let x2 = x + length;
   let y2 = y + length;
-
-  console.log(x, y);
 
   fill(grid, x, y, x2, y2, choice(palette));
 }
