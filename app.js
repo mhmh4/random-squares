@@ -76,7 +76,7 @@ function choice(array) {
 
 const palette = ["#125E8A", "#BB4430", "#7EBDC2", "#F3DFA2", "#7B6D8D"];
 
-const NUM_ITERATIONS = 10;
+const NUM_ITERATIONS = 1000;
 
 const lengths = [5, 4, 3, 2, 1];
 
