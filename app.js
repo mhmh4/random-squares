@@ -69,11 +69,11 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-let x = getRandomIntInclusive(0, grid.length - 3);
-let y = getRandomIntInclusive(0, grid[0].length - 3);
+let x = getRandomIntInclusive(0, grid.length - 2);
+let y = getRandomIntInclusive(0, grid[0].length - 2);
 
-let x2 = x + 2;
-let y2 = y + 2;
+let x2 = x + 1;
+let y2 = y + 1;
 
 console.log(x, y);
 
