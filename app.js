@@ -63,15 +63,15 @@ function generateRandomColor() {
 
 console.log(generateRandomColor());
 
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 const NUM_ITERATIONS = 10;
 
 for (let i = 0; i < NUM_ITERATIONS; i++) {
-  function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
   let x = getRandomIntInclusive(0, grid.length - 2);
   let y = getRandomIntInclusive(0, grid[0].length - 2);
 
