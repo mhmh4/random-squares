@@ -63,9 +63,19 @@ function generateRandomColor() {
 
 console.log(generateRandomColor());
 
-fill(grid, 3, 3, 4, 4, generateRandomColor());
-fill(grid, 10, 10, 10, 10, generateRandomColor());
-fill(grid, 0, 0, 2, 2, generateRandomColor());
-fill(grid, 0, 14, 10, 14, generateRandomColor());
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
+let x = getRandomIntInclusive(0, grid.length - 3);
+let y = getRandomIntInclusive(0, grid[0].length - 3);
+
+let x2 = x + 2;
+let y2 = y + 2;
+
+console.log(x, y);
+
+fill(grid, x, y, x2, y2, "#ff0000");
 drawGrid(ctx, grid, PIXEL_SIZE);
