@@ -19,15 +19,19 @@ const n = canvas.height / PIXEL_SIZE;
 
 let palette = [];
 
-const grid = [];
-
-for (let i = 0; i < m; i++) {
-  const row = [];
-  for (let j = 0; j < n; j++) {
-    row.push("#fff");
+function createGrid(rows, cols, val) {
+  const output = [];
+  for (let i = 0; i < rows; i++) {
+    const row = [];
+    for (let j = 0; j < cols; j++) {
+      row.push(val);
+    }
+    output.push(row);
   }
-  grid.push(row);
+  return output;
 }
+
+const grid = createGrid(m, n, "#fff");
 
 function drawGrid(ctx, grid, pixelSize) {
   const rows = grid.length;
