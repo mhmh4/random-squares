@@ -18,6 +18,15 @@ const m = canvas.width / PIXEL_SIZE;
 const n = canvas.height / PIXEL_SIZE;
 
 let palette = [];
+const grid = createGrid(m, n, "#fff");
+
+const inputs = document.querySelectorAll(".palette-color");
+const previews = document.querySelectorAll(".color-preview");
+
+const NUM_ITERATIONS = 20000;
+const lengths = [5, 4, 3, 2, 1];
+
+const generateButton = document.getElementById("generate-button");
 
 function createGrid(rows, cols, val) {
   const output = [];
@@ -30,8 +39,6 @@ function createGrid(rows, cols, val) {
   }
   return output;
 }
-
-const grid = createGrid(m, n, "#fff");
 
 function drawGrid(ctx, grid, pixelSize) {
   const rows = grid.length;
@@ -70,10 +77,6 @@ function choice(array) {
   return array[randomIndex];
 }
 
-const NUM_ITERATIONS = 20000;
-
-const lengths = [5, 4, 3, 2, 1];
-
 function update() {
   for (let i = 0; i < NUM_ITERATIONS; i++) {
     const length = choice(lengths);
@@ -89,8 +92,6 @@ function update() {
 
   drawGrid(ctx, grid, PIXEL_SIZE);
 }
-
-const generateButton = document.getElementById("generate-button");
 
 generateButton.addEventListener("click", () => {
   update();
@@ -113,9 +114,6 @@ function updatePreviews(inputs, previews) {
     previews[i].style.backgroundColor = inputs[i].value;
   }
 }
-
-const inputs = document.querySelectorAll(".palette-color");
-const previews = document.querySelectorAll(".color-preview");
 
 inputs.forEach((input) => {
   input.addEventListener("input", () => {
