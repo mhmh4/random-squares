@@ -51,8 +51,6 @@ function drawGrid(ctx, grid, pixelSize) {
   }
 }
 
-drawGrid(ctx, grid, PIXEL_SIZE);
-
 function fill(grid, i1, j1, i2, j2, color) {
   for (let x = i1; x <= i2; x++) {
     for (let y = j1; y <= j2; y++) {
