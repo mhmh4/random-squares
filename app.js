@@ -93,10 +93,6 @@ function update() {
   drawGrid(ctx, grid, PIXEL_SIZE);
 }
 
-generateButton.addEventListener("click", () => {
-  update();
-});
-
 window.addEventListener("load", () => {
   update();
 });
