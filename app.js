@@ -17,7 +17,7 @@ canvas.height = CANVAS_HEIGHT * SCALE;
 const m = canvas.width / PIXEL_SIZE;
 const n = canvas.height / PIXEL_SIZE;
 
-let palette = [];
+let palette = ["#21295C", "#1B3B6F", "#065A82", "#1C7293", "#304C89"];
 const grid = createGrid(m, n, "#fff");
 
 const inputs = document.querySelectorAll(".palette-color");
@@ -98,26 +98,5 @@ generateButton.addEventListener("click", () => {
 });
 
 window.addEventListener("load", () => {
-  updatePalette();
-  updatePreviews(inputs, previews);
   update();
-});
-
-function updatePalette() {
-  palette = Array.from(inputs).map((input) => {
-    return input.value;
-  });
-}
-
-function updatePreviews(inputs, previews) {
-  for (let i = 0; i < inputs.length; i++) {
-    previews[i].style.backgroundColor = inputs[i].value;
-  }
-}
-
-inputs.forEach((input) => {
-  input.addEventListener("input", () => {
-    updatePalette();
-    updatePreviews(inputs, previews);
-  });
 });
